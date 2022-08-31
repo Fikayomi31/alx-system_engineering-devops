@@ -1,2 +1,1 @@
-script that print the absolute path name of the current working directory
-Display the current list of ypur directory
+a script that creates a directory name
