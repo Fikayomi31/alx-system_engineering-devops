@@ -1,1 +1,1 @@
-Creating ascript that deletes all files in current directory
+Create a scripe that create the welcome in the current directory
