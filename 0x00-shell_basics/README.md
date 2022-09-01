@@ -1,1 +1,1 @@
-Creating a script thatmoves all file biginning with an uppercase letter to the directory
+Creating ascript that deletes all files in current directory
