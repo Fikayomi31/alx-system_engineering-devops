@@ -1,1 +1,1 @@
-creating a script that copy all htmlfrom current to parent directory
+Creating a script thatmoves all file biginning with an uppercase letter to the directory
