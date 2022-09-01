@@ -1,1 +1,1 @@
-Writung a script that prints all the groups the current user is part of.
+Writung a script that change the owner of file hello to betty.
