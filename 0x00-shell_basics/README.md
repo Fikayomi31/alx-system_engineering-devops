@@ -1,1 +1,1 @@
-Create a scripe that create the welcome in the current directory
+A command tolist all filesand directory of current directory
