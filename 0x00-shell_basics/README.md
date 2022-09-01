@@ -1,1 +1,1 @@
-The symbolic link should be created in the current directory 
+creating a script that copy all htmlfrom current to parent directory
