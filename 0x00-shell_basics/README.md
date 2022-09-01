@@ -1,1 +1,1 @@
-A script that a creates connnection
+Moving the file betty into myfirstdirectory
