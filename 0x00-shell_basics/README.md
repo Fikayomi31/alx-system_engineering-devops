@@ -1,1 +1,1 @@
-A script that list all files including hidden files 
+A script that print the command iamafile 
