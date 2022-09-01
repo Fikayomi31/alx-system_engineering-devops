@@ -1,1 +1,1 @@
-Writing a script that adds execution permission to the owner and the group owner, and read permission.
+Writing a script that adds execution to the owner, the group owner and every other user of the file hello.
