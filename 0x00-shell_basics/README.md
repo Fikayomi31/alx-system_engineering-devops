@@ -1,2 +1,1 @@
-
-a script that creates a directory name
+A script that a creates
