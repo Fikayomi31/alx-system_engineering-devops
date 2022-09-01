@@ -1,1 +1,1 @@
-A script that print the command iamafile 
+The symbolic link should be created in the current directory 
