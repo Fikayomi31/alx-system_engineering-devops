@@ -1,1 +1,1 @@
-Writing a script that create a directory called mydir  with permission 751 in the working directory
+Writing a script that change the group owner to schoo for file hello
