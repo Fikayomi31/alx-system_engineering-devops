@@ -1,1 +1,1 @@
-Writing a script that set the mode of the file hello the same as olleh mode in the working directory.
+Writing a script that adds execute permissionto all subdirectories of current working directory for the owner, group owner and other users
