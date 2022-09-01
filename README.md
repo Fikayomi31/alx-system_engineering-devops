@@ -1,1 +1,1 @@
-Task 0. Where am I?
+the script to list all files including hidden file
