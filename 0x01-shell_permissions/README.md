@@ -1,1 +1,1 @@
-Writung a script that change the owner of file hello to betty.
+Writing a script that adds execute permission to the owner of file hello.
