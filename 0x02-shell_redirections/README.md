@@ -2,3 +2,5 @@
   Write a script that prints “Hello, World”, followed by a new line to the standard output.
 1.All your scripts should be exactly two lines long
   Write a script that displays a confused smiley
+2.All your scripts should be exactly two lines long
+  Display the content of the /etc/passwd file.
