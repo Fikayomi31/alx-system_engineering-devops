@@ -11,4 +11,5 @@
 10.Write a script that deletes all the regular files (not the directories) with a .js extension
 11.Write a script that counts the number of directories and sub-directories in the current directory.
 12.Create a script that displays the 10 newest files in the current directory.
+13.Create a script that takes a list of words as input and prints only words that appear exactly once.
 
