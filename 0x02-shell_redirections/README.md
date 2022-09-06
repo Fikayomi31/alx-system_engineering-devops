@@ -24,3 +24,5 @@
 23.Write a command that finds all empty files and directories in the current directory and all sub-director.
 24.Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.
 25.An acrostic is a poem (or other form of writing) in which the first letter (or syllable, or word) of each line
+Write a script that parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
+26.Write a script that parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
