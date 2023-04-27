@@ -1,0 +1,7 @@
+#!/usr/bin env bash
+# Script to display Best School 10 times with for loop only
+
+for i in {1..10..1}
+do 
+	echo "Best School"
+done
