@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that display Best School 10 times but
+# 9th iteration, display Hi
+
