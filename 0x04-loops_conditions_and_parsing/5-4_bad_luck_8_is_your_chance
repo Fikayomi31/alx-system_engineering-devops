@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Script to display Best School loop from 1 to 10
+# Display bad luck on the 4th loop
+# Display good luck for the 8th loop
+# Display Best School for other loop
+
+i=1
+while ((i <= 10))
+do
+	if ((i == 4))
+	then
+		echo "bad luck"
+	elif ((i == 8))
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((i++))
+done
