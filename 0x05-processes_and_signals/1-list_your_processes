@@ -3,4 +3,4 @@
 # show all processes users
 # display user-oriented format
 # show process hierarchy
-ps -u
+ps auxf
