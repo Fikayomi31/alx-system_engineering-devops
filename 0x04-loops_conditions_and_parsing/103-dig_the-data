@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script that display visitor by IP and HTTP status code
+# using apache access.log file
+# sort an uniq count the number of occurrences for each group of IP and HTTP 
+
+awk '{print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn
