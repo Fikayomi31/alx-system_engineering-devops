@@ -6,7 +6,7 @@ For this project, you have to build your regular expression using Oniguruma, a r
 
 Because the focus of this exercise is to play with regular expressions (regex), here is the Ruby code that you should use, just replace the regexp part, meaning the code in between the //
 # Resources
-##Read or watch:
+## Read or watch:
 
 Regular expressions - basics
 Regular expressions - advanced
