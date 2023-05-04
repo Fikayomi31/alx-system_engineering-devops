@@ -2,14 +2,14 @@
 DevOps Network SysAdmi
 
 # Resources
-##Read or watch:
+## Read or watch:
 
 What is localhost
 What is 0.0.0.0
 What is the hosts file
 Netcat examples
 
-#man or help:
+# man or help:
 ifconfig
 telnet
 nc
@@ -17,7 +17,7 @@ cut
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-##General
+## General
 What is localhost/127.0.0.1
 What is 0.0.0.0
 What is /etc/hosts
@@ -28,8 +28,8 @@ You will not be able to meet the objectives of this or any following project by 
 You are not allowed to publish any content of this project.
 Any form of plagiarism is strictly forbidden and will result in removal from the program.
 
-#Requirements
-##General
+# Requirements
+## General
 
 Allowed editors: vi, vim, emacs
 All your files will be interpreted on Ubuntu 20.04 LTS
@@ -40,14 +40,14 @@ Your Bash script must pass Shellcheck (version 0.7.0 via apt-get) without any er
 The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
 The second line of all your Bash scripts should be a comment explaining what is the script doing
 
-#Task0
+# Task0
 Write a Bash script that configures an Ubuntu server with the below requirements.
-##Requirements:
+## Requirements:
 localhost resolves to 127.0.0.2
 facebook.com resolves to 8.8.8.8.
 The checker is running on Docker, so make sure to read this
 
-#Task1
+# Task1
 Write a Bash script that displays all active IPv4 IPs on the machine it’s executed on.
 
 Example:
@@ -60,7 +60,7 @@ Obviously, the IPs displayed may be different depending on which machine you are
 
 Note that we can see our localhost IP :)
 
-#Task2
+# Task2
 Write a Bash script that listens on port 98 on localhost.
 
 Terminal 0
