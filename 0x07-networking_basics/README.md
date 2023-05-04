@@ -1,8 +1,8 @@
 # 0x07. Networking basics #0
 DevOps
 Networ
-#Learning Objectives
-##At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+# Learning Objectives
+## At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 OSI Model
 What it is
@@ -27,8 +27,8 @@ What is a port
 Memorize SSH, HTTP and HTTPS port numbers
 What tool/protocol is often used to check if a device is connected to a network
 
-#Requirements
-##General
+# Requirements
+## General
 Allowed editors: vi, vim, emacs
 All your Bash script files will be interpreted on Ubuntu 20.04 LTS
 All your files should end with a new line
@@ -38,7 +38,7 @@ Your Bash script must pass shellcheck without any error
 The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
 The second line of all your Bash scripts should be a comment explaining what is the script doing
 
-##More Info
+## More Info
 The second line of all your Bash scripts should be a comment explaining what is the script doing
 
 For multiple choice question type tasks, just type the number of the correct answer in your answer file, add a new line for every new answer, example:
@@ -52,7 +52,7 @@ sylvain@ubuntu$ cat foo_answer_file
 3
 sylvain@ubuntu$
 
-##Task 0
+## Task 0
 Questions:
 
 What is the OSI model?
@@ -67,7 +67,7 @@ How is the OSI model organized?
 2. From the lowest to the highest level
 3. Randoml
 
-##Task 1
+## Task 1
 Questions:
 
 What type of network a computer in local is connected to?
@@ -88,7 +88,7 @@ What network do you use when you browse www.google.com from your smartphone (not
 2. WAN
 3. LA
 
-#Task2
+# Task2
 Questions:
 
 What is a MAC address?
@@ -103,7 +103,7 @@ What is an IP address?
 2. The unique identifier of a network interface
 3. Is a number that network devices use to connect to network
 
-#Task3
+# Task3
 Questions:
 
 Which statement is correct for the TCP box:
@@ -116,13 +116,13 @@ Which statement is correct for the TCP worker:
 1. Have you received boxes x, y, z?
 2. May I increase the rate at which I am sending you boxes
 
-#Task4
+# Task4
 Write a Bash script that displays listening ports:
 
 That only shows listening sockets
 That shows the PID and name of the program to which each socket belongs
 
-#Task5
+# Task5
 Write a Bash script that pings an IP address passed as an argument.
 
 Requirements:
