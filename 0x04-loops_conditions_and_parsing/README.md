@@ -60,5 +60,6 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 
 Shellcheck is available on the school’s computers. If you want to use it on your own computer, here is how to install it.
 
+![image](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/251/Vxotqyj.png)
 0. Create your own public key
 1. Write a Bash script that displays Best School 10 times.
