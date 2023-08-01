@@ -100,7 +100,7 @@ Write a Bash script that displays Best School 10 times
 Requriement:
 * You must use the for loop (while and until are forbidden)
 
----
+```
 sylvain@ubuntu$ head -n 2 1-for_best_school 
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
@@ -116,7 +116,8 @@ Best School
 Best School
 Best School
 sylvain@ubuntu$ 
----
+
+```
 
 Note that:
 
