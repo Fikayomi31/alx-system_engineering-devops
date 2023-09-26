@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# install nginx on the server
+# GET requesting a page using curl to return Hello World!
+sudo apt update
+sudo apt install nginx -y
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo service nginx start
