@@ -14,7 +14,7 @@ echo "server {
 	index fikayo.html index.nginx-debian.html;
 
 	location /redirect_me {
-		return 301 https://github.com/Fikayomi31;
+		return 301 https://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1;
 	}
 }" | sudo tee /etc/nginx/sites-available/default
 
