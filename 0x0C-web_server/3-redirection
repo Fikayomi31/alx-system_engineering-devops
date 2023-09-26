@@ -1,21 +1,11 @@
 #!/usr/bin/env bash
-# install nginx on the server
-# GET requesting a page using curl to return Hello World!
-sudo apt update
-sudo apt install nginx -y
-echo "Hello World!" | sudo tee /var/www/html/fikayo.html
+# install and setup nginx web server
+sudo apt-get update
+sudo apt-get install nginx -y
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
-# Script to redirects traffic
-echo "server {
-	listen 80;
-	listen [::]:80 default_server;
+# permanently redirects traffic from /redirect_me to anther url
 
-	root /var/www/html;
-	index fikayo.html index.nginx-debian.html;
-
-	location /redirect_me {
-		return 301 https://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1;
-	}
-}" | sudo tee /etc/nginx/sites-available/default
-
+text="\\\n\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+sudo sed -i "53i $text" /etc/nginx/sites-enabled/default
 sudo service nginx start
