@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
-B
-i
-i
 # start the apache2 server
 service apache2 start
