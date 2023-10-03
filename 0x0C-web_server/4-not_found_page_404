@@ -31,7 +31,7 @@ echo "server {
 sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
 
 # Create a custom 404 error page
-echo "Ceci n'est pas une page 404" | sudo tee /var/www/html/custom_404.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 
 # Test Nginx configuration to make sure there are no syntax error
 sudo nginx -t
