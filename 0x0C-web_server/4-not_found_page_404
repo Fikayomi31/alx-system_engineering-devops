@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
-# Check if Nginx is already installed
-if ! command -v nginx &> /dev/null
-then
-	echo "Nginx is not installed. Installing..."
+# Update the package list
+sudo apt update
 
-	# Update the package list
-	sudo apt update
-	
-	# Install Nginx
-	sudo apt install nginx -y
-else
-	echo "Nginx is already installed."
-fi
+# Install Nginx
+sudo apt install nginx -y
 
 #Create a configuration file for the redirection
 echo "server {
