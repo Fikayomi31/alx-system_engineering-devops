@@ -1,11 +1,31 @@
 #!/usr/bin/env bash
-# install and setup nginx web server
-sudo apt-get update
-sudo apt-get install nginx -y
-echo "Hello World!" | sudo tee /var/www/html/index.html
 
-# permanently redirects traffic from /redirect_me to anther url
+# Update the package list to ensure we have the latest informatiom
+sudo apt update
 
-text="\\\n\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
-sudo sed -i "53i $text" /etc/nginx/sites-enabled/default
-sudo service nginx start
+#Install Nginx if its not installed
+sudo apt install nginx -y
+
+#Create a configuration file for the redirection
+echo "server {
+	listen 80 default_server;
+	
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html
+	server_name _;
+
+	location /redirect_me {
+		return 301 'https://m.youtube.com/watch?v=QH2-TGUlwu4';
+	}
+
+	# Add other server configuration here if needed
+}" | sudo tee /etc/nginx/sites-available/redirect_me
+
+# Create a symbolic link to enable the configuration
+sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
+
+# Test Nginx configuration to make sure there are no syntax error
+sudo nginx -t
+
+# Reload Nginx to supply the changes
+sudo service nginx restart
