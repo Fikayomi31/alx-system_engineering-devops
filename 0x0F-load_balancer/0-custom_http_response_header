@@ -7,6 +7,10 @@ sudo apt install nginx -y
 
 #get the hostname
 hostname=$(hostname)
+
+#Remove the default Nginx server if it exists
+sudo rm -f /etc/nginx/sites-enabled/default
+
 #Create a configuration file for the redirection
 echo "server {
         listen 80 default_server;
