@@ -5,6 +5,7 @@ sudo apt update
 # Install Nginx
 sudo apt install nginx -y
 
+echo "Hello World!" | sudo tee /var/www/html/index.html
 #Create a configuration file for the redirection
 echo "server {
 	listen 80 default_server;
