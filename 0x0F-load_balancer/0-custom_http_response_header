@@ -31,7 +31,7 @@ echo "server {
 	}
 
 	add_header X-Served-By $hostname;
-	proxy_hide_header x-served-by;
+	
 
         # Add other server configuration here if needed
 }" | sudo tee /etc/nginx/sites-available/redirect_me
