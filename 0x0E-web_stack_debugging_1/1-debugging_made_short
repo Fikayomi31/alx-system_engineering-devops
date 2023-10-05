@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Script for nginx not to run after restar
+pkill -o nginx
