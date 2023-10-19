@@ -5,6 +5,7 @@ For this project, we expect you to look at these concepts:
 
   * [DNS](https://intranet.alxswe.com/concepts/12)
   * [Web stack debugging](https://intranet.alxswe.com/concepts/68)
+
 ![mysql](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/276/FlhGPEK.png)
 
 --Resources--
