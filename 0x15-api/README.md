@@ -12,7 +12,6 @@ This is a perfect example of a task that is not suited for Bash scripting, so le
 ## Resources
 
 Read or watch:
-
     * [Friends don’t let friends program in shell script](https://intranet.alxswe.com/rltoken/KMFzqRAqedMf7AHHBD_43g)
     * [What is an API](https://intranet.alxswe.com/rltoken/zeBO6_RNTlwaotyRRNAzoQ)
     * [What is an API? In English, please](https://intranet.alxswe.com/rltoken/bf09Qp6QY44CANLzxxRbPA)
@@ -44,7 +43,6 @@ General
     * Any form of plagiarism is strictly forbidden and will result in removal from the program.
 
 ## Requirements
-
 General
     * Allowed editors: vi, vim, emacs
     * All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
@@ -63,7 +61,7 @@ General
 
 0. Gather data from an API
 
-Write a Python script that, using this REST API, for a given employee ID, returns information about his/her TODO list progress.
+Write a Python script that, using this *[ REST API ](https://intranet.alxswe.com/rltoken/7cr7aLYdaWAZWBKrBKS12A) for a given employee ID, returns information about his/her TODO list progress.
 
 Requirements:
 
