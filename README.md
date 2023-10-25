@@ -26,3 +26,4 @@
 | 21.	| [0x13. Firewall](https://intranet.alxswe.com/projects/284) |
 | 22.	| [0x12. Web stack debugging #2](https://intranet.alxswe.com/projects/287) |
 | 23.	| [0x14. MySQL](https://intranet.alxswe.com/projects/280) |
+| 24.   | 0x15. API |
