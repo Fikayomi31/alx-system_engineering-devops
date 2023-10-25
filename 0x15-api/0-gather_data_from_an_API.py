@@ -1,20 +1,19 @@
 #!/usr/bin/python3
-"""Fetch and display information about an employee
-API: https://jsonplaceholder.typicode.com/
-"""
+"""Accessing a REST API for todo lists of employees"""
 
 import requests
 import sys
 
 
-if __name__ == "__main__":
-    employee_id = sys.argv[1]
-    url = api = "https://jsonplaceholder.typicode.com/users"
+if __name__ == '__main__':
+    employeeId = sys.argv[1]
+    baseUrl = "https://jsonplaceholder.typicode.com/users"
+    url = baseUrl + "/" + employeeId
 
-    response = requests.get("{}/{}".format(url, employee_id))
+    response = requests.get(url)
     employeeName = response.json().get('name')
 
-    todoUrl = url + "/" + employee_id + "/todos"
+    todoUrl = url + "/todos"
     response = requests.get(todoUrl)
     tasks = response.json()
     done = 0
@@ -24,6 +23,7 @@ if __name__ == "__main__":
         if task.get('completed'):
             done_tasks.append(task)
             done += 1
+
     print("Employee {} is done with tasks({}/{}):"
           .format(employeeName, done, len(tasks)))
 
