@@ -12,10 +12,10 @@ if __name__ == "__main__":
     url = api = "https://jsonplaceholder.typicode.com/users"
 
     response = requests.get("{}/{}".format(url, employee_id))
-    employee_name = response.json().get('name')
+    employeeName = response.json().get('name')
 
-    todo_url = url + "/" + employee_id + "/todos"
-    response = requests.get(todo_url)
+    todoUrl = url + "/" + employee_id + "/todos"
+    response = requests.get(todoUrl)
     tasks = response.json()
     done = 0
     done_tasks = []
@@ -25,7 +25,7 @@ if __name__ == "__main__":
             done_tasks.append(task)
             done += 1
     print("Employee {} is done with tasks({}/{}):"
-          .format(employee_name, done, len(tasks)))
+          .format(employeeName, done, len(tasks)))
 
     for task in done_tasks:
         print("\t {}".format(task.get('title')))
