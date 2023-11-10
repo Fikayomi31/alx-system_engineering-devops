@@ -27,3 +27,8 @@
 | 22.	| [0x12. Web stack debugging #2](https://intranet.alxswe.com/projects/287) |
 | 23.	| [0x14. MySQL](https://intranet.alxswe.com/projects/280) |
 | 24.   | 0x15. API |
+| 25.	| 0x16. API advanced |
+| 26.	| 0x17. Web stack debugging #3 |
+| 27. 	| 0x18. Webstack monitoring |
+| 28. 	| 0x19. Postmortem |
+
