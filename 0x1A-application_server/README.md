@@ -198,4 +198,112 @@ vagrant@ubuntu-xenial:~$ curl 35.231.193.217/airbnb-dynamic/number_odd_or_even/6
   <BODY><H1>Number: 6 is even</H1></BODY>
 </HTML>vagrant@ubuntu-xenial:~$
 ```
+3. Add a route with query parameters
+
+Building on what you did in the previous tasks, let’s expand our web application by adding another service for Gunicorn to handle. In AirBnB_clone_v2/web_flask/6-number_odd_or_even, the route /number_odd_or_even/<int:n> should already be defined to render a page telling you whether an integer is odd or even. You’ll need to configure Nginx to proxy HTTP requests to the route /airbnb-dynamic/number_odd_or_even/(any integer) to a Gunicorn instance listening on port 5001. The key to this exercise is getting Nginx configured to proxy requests to processes listening on two different ports. You are not expected to keep your application server processes running. If you want to know how to run multiple instances of Gunicorn without having multiple terminals open, see tips below.
+
+Requirements:
+
+*   Nginx must serve this page both locally and on its public IP on port 80.
+*   Nginx should proxy requests to the route /airbnb-dynamic/number_odd_or_even/(any integer) the process listening on port 5001.
+*   Include your Nginx config file as 3-app_server-nginx_config.
+Tips:
+
+*   Check out these articles/docs for clues on how to configure Nginx: [Understanding Nginx Server and Location Block Selection Algorithms,](https://intranet.alxswe.com/rltoken/0xFZ6umndhIH19cSGFnexg) [Understanding Nginx Location Blocks Rewrite Rules,](https://intranet.alxswe.com/rltoken/0xFZ6umndhIH19cSGFnexg) [Nginx Reverse Proxy.](https://intranet.alxswe.com/rltoken/8O-01TMh2X22EmYNps0X-Q)
+*   In order to spin up a Gunicorn instance as a detached process you can use the terminal multiplexer utility tmux. Enter the command tmux new-session -d 'gunicorn --bind 0.0.0.0:5001 web_flask.6-number_odd_or_even:app' and if successful you should see no output to the screen. You can verify that the process has been created by running pgrep gunicorn to see its PID. Once you’re ready to end the process you can either run tmux a to reattach to the processes, or you can run kill <PID> to terminate the background process by ID.
+Example:
+
+Terminal 1:
+```
+ubuntu@229-web-01:~/AirBnB_clone_v2$ tmux new-session -d 'gunicorn --bind 0.0.0.0:5000 web_flask.0-hello_route:app'
+ubuntu@229-web-01:~/AirBnB_clone_v2$ pgrep gunicorn
+1661
+1665
+ubuntu@229-web-01:~/AirBnB_clone_v2$ tmux new-session -d 'gunicorn --bind 0.0.0.0:5001 web_flask.6-number_odd_or_even:app'
+ubuntu@229-web-01:~/AirBnB_clone_v2$ pgrep gunicorn
+1661
+1665
+1684
+1688
+
+ubuntu@229-web-01:~/AirBnB_clone_v2$ curl 127.0.0.1:5000/airbnb-onepage/
+Hello HBNB!ubuntu@229-web-01:~/AirBnB_clone_v2$
+
+ubuntu@229-web-01:~/AirBnB_clone_v2$ curl 127.0.0.1:5001/number_odd_or_even/6
+<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>HBNB</TITLE>
+  </HEAD>
+  <BODY><H1>Number: 6 is even</H1></BODY>
+</HTML>ubuntu@229-web-01:~/AirBnB_clone_v2
+ubuntu@229-web-01:~$ 
+ubuntu@229-web-01:~/AirBnB_clone_v2$ curl 127.0.0.1/airbnb-dynamic/number_odd_or_even/5
+<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>HBNB</TITLE>
+  </HEAD>
+  <BODY><H1>Number: 5 is odd</H1></BODY>
+</HTML>ubuntu@229-web-01:~/AirBnB_clone_v2$
+```
+Local machine:
+```
+vagrant@ubuntu-xenial:~$ curl 35.231.193.217/airbnb-dynamic/number_odd_or_even/6<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>HBNB</TITLE>
+  </HEAD>
+  <BODY><H1>Number: 6 is even</H1></BODY>
+</HTML>vagrant@ubuntu-xenial:~$
+```
+
+4. Let's do this for your API
+
+Let’s serve what you built for AirBnB clone v3 - RESTful API on web-01.
+
+Requirements:
+
+*   Git clone your AirBnB_clone_v3
+*   Setup Nginx so that the route /api/ points to a Gunicorn instance listening on port 5002
+*   Nginx must serve this page both locally and on its public IP on port 80
+*   To test your setup you should bind Gunicorn to api/v1/app.py
+*   It may be helpful to import your data (and environment variables) from this project
+*   Upload your Nginx config file as 4-app_server-nginx_config
+Example:
+
+Terminal 1:
+```
+ubuntu@229-web-01:~/AirBnB_clone_v3$ tmux new-session -d 'gunicorn --bind 0.0.0.0:5002 api.v1.app:app'
+ubuntu@229-web-01:~/AirBnB_clone_v3$ curl 127.0.0.1:5002/api/v1/states
+[{"__class__":"State","created_at":"2019-05-10T00:39:27.032802","id":"7512f664-4951-4231-8de9-b18d940cc912","name":"California","updated_at":"2019-05-10T00:39:27.032965"},{"__class__":"State","created_at":"2019-05-10T00:39:36.021219","id":"b25625c8-8a7a-4c1f-8afc-257bf9f76bc8","name":"Arizona","updated_at":"2019-05-10T00:39:36.021281"}]
+ubuntu@229-web-01:~/AirBnB_clone_v3$
+ubuntu@229-web-01:~/AirBnB_clone_v3$ curl 127.0.0.1/api/v1/states
+[{"__class__":"State","created_at":"2019-05-10T00:39:27.032802","id":"7512f664-4951-4231-8de9-b18d940cc912","name":"California","updated_at":"2019-05-10T00:39:27.032965"},{"__class__":"State","created_at":"2019-05-10T00:39:36.021219","id":"b25625c8-8a7a-4c1f-8afc-257bf9f76bc8","name":"Arizona","updated_at":"2019-05-10T00:39:36.021281"}]
+ubuntu@229-web-01:~/AirBnB_clone_v3$
+```
+Local Terminal:
+```
+vagrant@ubuntu-xenial:~$ curl 35.231.193.217/api/v1/states
+[{"__class__":"State","created_at":"2019-05-10T00:39:27.032802","id":"7512f664-4951-4231-8de9-b18d940cc912","name":"California","updated_at":"2019-05-10T00:39:27.032965"},{"__class__":"State","created_at":"2019-05-10T00:39:36.021219","id":"b25625c8-8a7a-4c1f-8afc-257bf9f76bc8","name":"Arizona","updated_at":"2019-05-10T00:39:36.021281"}]
+vagrant@ubuntu-xenial:~$
+```
+
+5. Serve your AirBnB clone
+
+Let’s serve what you built for AirBnB clone - Web dynamic on web-01.
+
+Requirements:
+
+*   Git clone your AirBnB_clone_v4
+*   Your Gunicorn instance should serve content from web_dynamic/2-hbnb.py on port 5003
+*   Setup Nginx so that the route / points to your Gunicorn instance
+*   Setup Nginx so that it properly serves the static assets found in web_dynamic/static/ (this is essential for your page to render properly)
+*   For your website to be fully functional, you will need to reconfigure web_dynamic/static/scripts/2-hbnb.js to the correct IP
+*   Nginx must serve this page both locally and on its public IP and port 5003
+*   Make sure to pull up your Developer Tools on your favorite browser to verify that you have no errors
+*   Upload your Nginx config as 5-app_server-nginx_config
+After loading, your website should look like this:
+
+![alt AirBnB page](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/7a8a7c33021b1b74f9cdc1fd8f855bdb1f8cd44e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231114T105357Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0eeb96461282caf6c4cba882b6e25b39aab73fe15f0597caeaa131ab46d358f9)
 
