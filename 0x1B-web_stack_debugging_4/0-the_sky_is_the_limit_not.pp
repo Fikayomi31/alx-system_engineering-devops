@@ -2,9 +2,10 @@
 
 exec {'replace line':
    command  => 'sed -i "s|ULIMIT=\"-n 15"|ULIMIT=\"-n 5000\"|" /etc/default/nginx',
-   provider => 'shell',
+   provider => 'shell'
+   before   => Exec['restart'],
 }
--> exec {'restart nginx':
-   command  => 'nginx restart',
+exec {'restart':
+   command  => 'sudo service nginx restart',
    provider => 'shell',
 }
